@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>★ LISARDALAIS ★ Space Profile Y2K</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts para estilo retro / pixel / Y2K -->
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=MS+PGothic&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #ffdeeb;
+            background-image: 
+                radial-gradient(#ffb6c1 1px, transparent 1px),
+                radial-gradient(#ffb6c1 1px, #ffdeeb 1px);
+            background-size: 40px 40px;
+            background-position: 0 0, 20px 20px;
+            font-family: 'Comic Neue', 'MS PGothic', sans-serif;
+            color: #4a0e2e;
+        }
+
+        /* Marcos y Ventanas estilo Retro/Y2K */
+        .y2k-border {
+            border: 3px double #ff1493;
+            box-shadow: 4px 4px 0px #ff69b4, 8px 8px 0px #ffb6c1;
+        }
+
+        .y2k-window {
+            background: #fff0f6;
+            border: 2px solid #ff69b4;
+            box-shadow: 3px 3px 0px #d87093;
+        }
+
+        .y2k-header {
+            background: linear-gradient(90deg, #ff1493, #ff69b4, #ffb6c1);
+            color: white;
+            font-weight: bold;
+            padding: 4px 10px;
+            font-family: 'VT323', monospace;
+            letter-spacing: 1px;
+        }
+
+        .y2k-btn {
+            background: #ff69b4;
+            color: white;
+            border: 2px outset #ffb6c1;
+            font-weight: bold;
+            transition: all 0.1s ease;
+        }
+
+        .y2k-btn:hover {
+            background: #ff1493;
+            border-style: inset;
+            transform: translate(1px, 1px);
+        }
+
+        .pixel-font {
+            font-family: 'VT323', monospace;
+        }
+
+        /* Marquee animado */
+        marquee {
+            background: #ff69b4;
+            color: white;
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            padding: 2px 0;
+        }
+    </style>
+</head>
+<body class="p-2 md:p-6 min-h-screen">
+
+    <!-- Marquee Y2K Superior -->
+    <div class="max-w-6xl mx-auto mb-4 y2k-window overflow-hidden">
+        <marquee behavior="scroll" direction="left">
+            ★ ♡ ¡Bienvenidos al perfil oficial de LISARDALAIS! ♡ ★ "Las mejores historias son aquellas que nos inspiran, desafían y transforman nuestra manera de ver el mundo." ★ ♡
+        </marquee>
+    </div>
+
+    <!-- Contenedor Principal Estilo Perfil -->
+    <div class="max-w-6xl mx-auto y2k-window y2k-border p-4 md:p-6">
+        
+        <!-- Header / Banner Top -->
+        <header class="y2k-window mb-6">
+            <div class="y2k-header flex justify-between items-center">
+                <span class="text-xl">☆ LISARDALAIS.EXE - Myspace / Spacehey Profile ☆</span>
+                <div class="flex gap-1">
+                    <button class="px-2 bg-pink-300 text-black font-bold text-xs border border-white">_</button>
+                    <button class="px-2 bg-pink-300 text-black font-bold text-xs border border-white">□</button>
+                    <button class="px-2 bg-red-400 text-white font-bold text-xs border border-white">X</button>
+                </div>
+            </div>
+            
+            <div class="p-4 flex flex-col md:flex-row justify-between items-center gap-4 bg-pink-100">
+                <div>
+                    <h1 class="text-5xl md:text-6xl font-extrabold text-pink-600 pixel-font drop-shadow">
+                        LISARDALAIS
+                    </h1>
+                    <p class="text-xs md:text-sm text-pink-800 font-bold">✧ Creadora • Escritora • Guionista • Directora Audiovisual ✧</p>
+                </div>
+
+                <!-- Barra de Navegación -->
+                <nav class="flex flex-wrap gap-2 justify-center">
+                    <a href="#acerca" class="y2k-btn px-3 py-1 rounded text-sm">☆ Acerca</a>
+                    <a href="#experiencia" class="y2k-btn px-3 py-1 rounded text-sm">☆ Experiencia</a>
+                    <a href="#proyectos" class="y2k-btn px-3 py-1 rounded text-sm">☆ Proyectos</a>
+                    <a href="#contacto" class="y2k-btn px-3 py-1 rounded text-sm">☆ Contacto</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Banner Multimedia GIF -->
+        <div class="y2k-window p-2 mb-6 text-center bg-white">
+            <img src="https://cdnb.artstation.com/p/assets/images/images/043/163/227/original/augustin-cart-gif-lofi-final.gif?1636484521" 
+                 alt="lofigirl" 
+                 class="w-full max-h-72 object-cover border-2 border-pink-400">
+        </div>
+
+<!-- Reproductor de Audio Interactivo JS -->
+<div class="y2k-window p-3 mb-6 bg-pink-200 flex flex-col md:flex-row items-center justify-between gap-4">
+
+    <div class="flex items-center gap-2">
+        <span class="text-2xl">🎵</span>
+        <div>
+            <p class="font-bold text-sm text-pink-900">
+                Music Player: My Lucky Stars.mp3
+            </p>
+            <p class="text-xs text-pink-700" id="audio-status">
+                Estado: En pausa ⏸️
+            </p>
+        </div>
+    </div>
+
+    <div class="flex items-center gap-2">
+        <audio id="bg-audio" controls class="h-8">
+            <source src="./My%20Lucky%20Stars.mp3" type="audio/mpeg">
+            Tu navegador no soporta el reproductor de audio.
+        </audio>
+    </div>
+
+</div>
+
+
+        <!-- Grid Principal (Estilo Perfil 2 Columnas) -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Columna Izquierda: Perfil & Bio Corta -->
+<aside class="space-y-6">
+
+    <!-- Tarjeta de Perfil / Status -->
+    <div class="y2k-window p-4">
+        <div class="y2k-header -m-4 mb-4">STATUS & INFO</div>
+
+        <div class="text-center">
+            <img src="./lisardalaisimage.png"
+                 alt="Lisardalais Image"
+                 onerror="this.src='https://api.dicebear.com/7.x/bottts/svg?seed=Lisardalais'"
+                 class="w-32 h-32 mx-auto rounded-full border-4 border-pink-400 bg-pink-100 object-cover mb-3">
+
+            <p class="font-bold text-lg text-pink-700">Lisardalais</p>
+            <p class="text-xs text-pink-900 italic">"Revelar la belleza de lo invisible"</p>
+
+            <hr class="my-3 border-pink-300">
+
+            <div class="text-left text-xs space-y-1">
+                <p><b>MOOD:</b> 🎨 Creando mundos</p>
+                <p><b>STATUS:</b> <span class="text-green-600 font-bold">● ONLINE</span></p>
+                <p><b>VISITAS:</b> <span id="visitor-count" class="pixel-font text-base text-pink-600">001337</span></p>
+            </div>
+        </div>
+    </div>
+</aside>
+
+
+                <!-- Acerca de mi & Filosofía -->
+                <div id="acerca" class="y2k-window p-4 space-y-4">
+                    <div class="y2k-header -m-4 mb-4">ACERCA DEL ARTISTA</div>
+                    <p class="text-sm bg-pink-50 p-3 border border-pink-300 rounded leading-relaxed">
+                        <b>Lisardalais</b> es el seudónimo de <b>Lisseth Galván</b>, una creativa soñadora que busca, a través del arte y el cine, revelar la belleza de lo invisible y la profundidad de lo humano.
+                    </p>
+
+                    <div class="y2k-header -mx-4 my-2">FILOSOFÍA</div>
+                    <p class="text-sm italic bg-pink-50 p-3 border border-pink-300 rounded text-pink-900">
+                        "Creo firmemente que las mejores historias son aquellas que nos inspiran, desafían y transforman nuestra manera de ver el mundo."
+                    </p>
+                </div>
+            </aside>
+
+            <!-- Columna Derecha: Contenido Principal -->
+            <main class="lg:col-span-2 space-y-6">
+
+                
+
+
+<!-- Sección Video Principal -->
+<div class="y2k-window p-4">
+    <div class="y2k-header -m-4 mb-4">FEATURED VIDEO</div>
+
+    <div class="w-full bg-black rounded overflow-hidden">
+        <iframe
+            class="w-full aspect-video"
+            src="https://www.youtube.com/embed/UXbrMjBJCoA"
+            title="Featured Video - Lisardalais"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen>
+        </iframe>
+    </div>
+</div>
+
+
+
+
+                <!-- Sección Experiencia -->
+                <section id="experiencia" class="y2k-window p-4">
+                    <div class="y2k-header -m-4 mb-4 text-center text-lg">★ EXPERIENCIA ★</div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-2">
+                        <!-- Escritora y Guionista -->
+                        <div class="bg-pink-50 p-3 border border-pink-300 rounded">
+                            <h3 class="font-bold text-pink-700 text-base mb-2 border-b border-pink-300 pb-1">
+                                ESCRITORA Y GUIONISTA
+                            </h3>
+                            <ul class="text-xs space-y-2">
+                                <li><b>Guion "Antes de que nos olviden":</b> Universidad</li>
+                                <li><b>Guerra entre luz y oscuridad:</b> Proyecto personal</li>
+                                <li><b>Génesis, el nuevo paraíso:</b> Universidad / Taller escritura</li>
+                                <li><b>Luna:</b> Universidad / Taller escritura</li>
+                                <li><b>La paradoja del calor:</b> Universidad / Taller escritura</li>
+                            </ul>
+                        </div>
+
+                        <!-- Coordinadora, Editora y Supervisora -->
+                        <div class="bg-pink-50 p-3 border border-pink-300 rounded">
+                            <h3 class="font-bold text-pink-700 text-base mb-2 border-b border-pink-300 pb-1">
+                                SUPERVISORA AUDIOVISUAL & EDITORA
+                            </h3>
+                            <ul class="text-xs space-y-2">
+                                <li><b>Proyecto académico:</b> "¿Qué es el storytelling?"</li>
+                                <li><b>Storyboard animado Catarsis:</b> "Bitácoras de ensueño"</li>
+                                <li><b>Promocional Storyboard:</b> Cenicienta</li>
+                                <li><b>Tráiler animado:</b> "Por gracia y desgracia"</li>
+                                <li><b>Cortometraje experimental:</b> "Para mi futuro yo"</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Sección Proyectos Memorables -->
+                <section id="proyectos" class="y2k-window p-4">
+                    <div class="y2k-header -m-4 mb-4 text-center text-lg">★ PROYECTOS MEMORABLES ★</div>
+                    
+                    <!-- Short Films -->
+                    <h3 class="pixel-font text-2xl text-pink-600 font-bold my-3 text-center">SHORT FILMS</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        
+                        <!-- Article 1 -->
+                        <article class="bg-white p-3 border border-pink-300 rounded y2k-window">
+                            <h4 class="font-bold text-pink-700">Bitácoras de ensueño</h4>
+                            <p class="text-xs text-pink-500 mb-1">Fecha: 26/agosto/2025</p>
+                            <p class="text-xs text-gray-700 mb-3">Un cortometraje basado en un storyboard de mi autoría. Sigue a una chica que presencia cómo una iglesia se consume bajo las llamas.</p>
+                            <a href="https://drive.google.com/file/d/1nxHvkxPsnYFLgMC6dcuRwwwdy-D8bAiS/view?usp=sharing" target="_blank" class="y2k-btn inline-block text-xs px-2 py-1 rounded">Ver video completo ➔</a>
+                        </article>
+
+                        <!-- Article 2 -->
+                        <article class="bg-white p-3 border border-pink-300 rounded y2k-window">
+                            <h4 class="font-bold text-pink-700">¿Qué es el storytelling?</h4>
+                            <p class="text-xs text-pink-500 mb-1">Fecha: 15/febrero/2025</p>
+                            <p class="text-xs text-gray-700 mb-3">Video explicativo y dinámico acerca del concepto de storytelling y cómo ha evolucionado a lo largo del tiempo.</p>
+                            <a href="https://drive.google.com/file/d/18nN04hoMzIRSeTHh4YEWz4xP3kSA47CC/view?usp=sharing" target="_blank" class="y2k-btn inline-block text-xs px-2 py-1 rounded">Ver video completo ➔</a>
+                        </article>
+
+                        <!-- Article 3 -->
+                        <article class="bg-white p-3 border border-pink-300 rounded y2k-window">
+                            <h4 class="font-bold text-pink-700">Promocional Cenicienta</h4>
+                            <p class="text-xs text-pink-500 mb-1">Fecha: 08/febrero/2025</p>
+                            <p class="text-xs text-gray-700 mb-3">Video publicitario adaptado a un clásico de Disney mediante secuencias de sketches dinámicos.</p>
+                            <a href="https://drive.google.com/file/d/14FXAAYGCNmMf3t-Zqah_KVizpGfah2Ze/view?usp=sharing" target="_blank" class="y2k-btn inline-block text-xs px-2 py-1 rounded">Ver video completo ➔</a>
+                        </article>
+
+                        <!-- Article 4 -->
+                        <article class="bg-white p-3 border border-pink-300 rounded y2k-window">
+                            <h4 class="font-bold text-pink-700">¿Por qué son importantes los cineastas?</h4>
+                            <p class="text-xs text-pink-500 mb-1">Fecha: 31/marzo/2024</p>
+                            <p class="text-xs text-gray-700 mb-3">Video de un minuto en formato vertical que refleja la visión personal del artista frente al séptimo arte.</p>
+                            <a href="https://drive.google.com/file/d/1VLwfrYEmZhxSQvMNQEacF1OaA0ialSFZ/view?usp=sharing" target="_blank" class="y2k-btn inline-block text-xs px-2 py-1 rounded">Ver video completo ➔</a>
+                        </article>
+
+                        <!-- Article 5 -->
+                        <article class="bg-white p-3 border border-pink-300 rounded y2k-window">
+                            <h4 class="font-bold text-pink-700">Por gracia y desgracia</h4>
+                            <p class="text-xs text-pink-500 mb-1">Fecha: 26/08/2026</p>
+                            <p class="text-xs text-gray-700 mb-3">Tráiler animado por Consejo de Brujos. Una monja y un demonio intentan descubrir qué significa realmente el bien y el mal.</p>
+                            <a href="https://drive.google.com/file/d/1GV3XCdWwLbbMjOJNPH8MZ598r5yvIaZu/view?usp=sharing" target="_blank" class="y2k-btn inline-block text-xs px-2 py-1 rounded">Ver video completo ➔</a>
+                        </article>
+
+                        <!-- Article 6 -->
+                        <article class="bg-white p-3 border border-pink-300 rounded y2k-window">
+                            <h4 class="font-bold text-pink-700">Para mi futuro yo</h4>
+                            <p class="text-xs text-pink-500 mb-1">Fecha: 26/09/2026</p>
+                            <p class="text-xs text-gray-700 mb-3">Video corto experimental entre cine de tercera persona y found footage que revela la visión más íntima del artista.</p>
+                            <a href="https://drive.google.com/file/d/15MI79CYkl8W79L1C17sPw2G0vtTU6Dhm/view?usp=sharing" target="_blank" class="y2k-btn inline-block text-xs px-2 py-1 rounded">Ver video completo ➔</a>
+                        </article>
+
+                    </div>
+
+                    <!-- Escritura Creativa -->
+                    <h3 class="pixel-font text-2xl text-pink-600 font-bold my-4 text-center border-t border-pink-300 pt-3">ESCRITURA CREATIVA</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                        <article class="bg-white p-3 border border-pink-300 rounded y2k-window">
+                            <h4 class="font-bold text-pink-700">Antes de que nos olviden</h4>
+                            <p class="text-xs text-pink-500">26/septiembre/2026 • Formato: Guion</p>
+                            <p class="text-xs text-gray-700 my-2">Años después de la tragedia del 68, Memo revive los recuerdos de sus amigos y la pérdida que marcó su vida...</p>
+                            <a href="https://drive.google.com/file/d/1389mbpT3hjImzRxZf4aK8qcmiiKO6RxL/view?usp=sharing" target="_blank" class="text-xs text-pink-600 font-bold underline">Leer escrito completo ➔</a>
+                        </article>
+
+                        <article class="bg-white p-3 border border-pink-300 rounded y2k-window">
+                            <h4 class="font-bold text-pink-700">Guerra entre luz y oscuridad</h4>
+                            <p class="text-xs text-pink-500">Proyecto personal (2023-2025) • Epopeya teológica</p>
+                            <p class="text-xs text-gray-700 my-2">Fantasía épica sobre un pacto divino entre el Creador y un ángel caído enviando dos seres a la Tierra...</p>
+                            <a href="https://drive.google.com/file/d/18JiQsCFySNjBMwRMXp2xir6FlBk10WoF/view?usp=sharing" target="_blank" class="text-xs text-pink-600 font-bold underline">Leer escrito completo ➔</a>
+                        </article>
+
+                        <article class="bg-white p-3 border border-pink-300 rounded y2k-window">
+                            <h4 class="font-bold text-pink-700">Génesis, el nuevo paraíso</h4>
+                            <p class="text-xs text-pink-500">14/octubre/2025 • Retelling bíblico</p>
+                            <p class="text-xs text-gray-700 my-2">Mito reimaginado sobre la guerra entre el cielo y la humanidad, donde tres mujeres sostienen la esperanza...</p>
+                            <a href="https://drive.google.com/file/d/1t4IloD-BFqt3-Jn8w1Zh145JXvQ1JpFD/view?usp=sharing" target="_blank" class="text-xs text-pink-600 font-bold underline">Leer escrito completo ➔</a>
+                        </article>
+
+                        <article class="bg-white p-3 border border-pink-300 rounded y2k-window">
+                            <h4 class="font-bold text-pink-700">Luna</h4>
+                            <p class="text-xs text-pink-500">05/febrero/2025 • Mito astrológico</p>
+                            <p class="text-xs text-gray-700 my-2">Fábula poética sobre una joven heredera de Saturno destinada a ser luna, que desafía su destino hasta viajar a la Tierra...</p>
+                            <a href="https://drive.google.com/file/d/1vp4seTWam5A9xDo6wuBklVMuFoN7xrMJ/view?usp=sharing" target="_blank" class="text-xs text-pink-600 font-bold underline">Leer escrito completo ➔</a>
+                        </article>
+
+                        <article class="bg-white p-3 border border-pink-300 rounded y2k-window md:col-span-2">
+                            <h4 class="font-bold text-pink-700 text-center">La paradoja del calor</h4>
+                            <p class="text-xs text-pink-500 text-center">28/octubre/2025 • Relato alegórico / Fantasía poética</p>
+                            <p class="text-xs text-gray-700 my-2 text-center">Relato simbólico sobre una criatura que protege su corazón encerrándolo en hielo, hasta recibir la visita de un ser de fuego.</p>
+                            <div class="text-center">
+                                <a href="https://drive.google.com/file/d/12KVUAkxil-bm47ObB08wBJMPzA_Rf461/view?usp=sharing" target="_blank" class="text-xs text-pink-600 font-bold underline">Leer escrito completo ➔</a>
+                            </div>
+                        </article>
+
+                    </div>
+                </section>
+
+                <!-- Sección Contacto -->
+                <section id="contacto" class="y2k-window p-4">
+                    <div class="y2k-header -m-4 mb-4 text-center text-lg">★ CONTACTO & REDES ★</div>
+                    <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mt-2">
+                        
+                        <div class="bg-pink-100 p-4 border border-pink-300 rounded text-center w-full sm:w-1/2 y2k-window">
+                            <h3 class="font-bold text-pink-800 text-sm">Instagram</h3>
+                            <p class="text-xs text-pink-600 mb-2">@Lisardalais</p>
+                            <a href="https://www.instagram.com/lisardalais/" target="_blank" class="y2k-btn px-4 py-2 rounded text-xs inline-block">Visita mi perfil</a>
+                        </div>
+
+                        <div class="bg-pink-100 p-4 border border-pink-300 rounded text-center w-full sm:w-1/2 y2k-window">
+                            <h3 class="font-bold text-pink-800 text-sm">CharacterHub</h3>
+                            <p class="text-xs text-pink-600 mb-2">Lore exclusivo de mis OCs</p>
+                            <a href="https://characterhub.com/profile/lisardalais" target="_blank" class="y2k-btn px-4 py-2 rounded text-xs inline-block">Visita mi perfil</a>
+                        </div>
+
+                    </div>
+                </section>
+
+            </main>
+        </div>
+
+        <!-- Banner Inferior Gif -->
+        <div class="y2k-window p-2 my-6 text-center bg-white">
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/hd/5c9e06114084301.6034c329b0e28.gif" 
+                 alt="lofigirl2" 
+                 class="w-full max-h-48 object-cover border-2 border-pink-400">
+        </div>
+
+        <!-- Footer -->
+        <footer class="y2k-window p-4 bg-pink-300 text-center text-xs text-pink-900">
+            <p class="italic text-sm font-semibold">"Prohibido de soñar y de crear"</p>
+            <p class="font-bold mt-1 text-pink-950">© LISARDALAIS - Space Profile 2000s Edition</p>
+        </footer>
+
+    </div>
+
+    <!-- Script de JavaScript Interactivo -->
+    <script>
+        // Actualización de estado de audio
+        const audio = document.getElementById('bg-audio');
+        const audioStatus = document.getElementById('audio-status');
+
+        if(audio && audioStatus) {
+            audio.addEventListener('play', () => {
+                audioStatus.textContent = 'Estado: Reproduciendo ▶️';
+            });
+            audio.addEventListener('pause', () => {
+                audioStatus.textContent = 'Estado: En pausa ⏸️';
+            });
+        }
+
+        // Contador de Visitas Simulado estilo Y2K
+        let count = 1337;
+        const countElement = document.getElementById('visitor-count');
+        if(countElement) {
+            setInterval(() => {
+                if(Math.random() > 0.7) {
+                    count++;
+                    countElement.textContent = String(count).padStart(6, '0');
+                }
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
